@@ -213,6 +213,11 @@
   .deliver b { color:#fff; }
   .deliver a { color:var(--accent); }
 
+  .qa { border-top:1px solid var(--border); padding:22px 0; display:grid; grid-template-columns:230px 1fr; gap:16px; }
+  .qa h3 { font-size:.98rem; font-weight:600; }
+  .qa p { color:var(--muted); font-size:.9rem; }
+  @media (max-width:700px){ .qa { grid-template-columns:1fr; gap:6px; } }
+
   footer { border-top:1px solid var(--border); padding:44px 0; }
   footer .wrap { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   footer p { color:#666; font-size:.82rem; }
@@ -358,6 +363,21 @@
     </div>
     <div class="deliver">
       <b>How delivery works:</b> your payment is picked up by our wallet monitor automatically. Email <a href="mailto:secondwindmc@proton.me">secondwindmc@proton.me</a> with your transaction ID and which product you bought (SecondWind, GraveGuard, or the bundle) — we verify on-chain and send the jar back the same day. Questions before buying? Same address.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">FAQ</p>
+    <h2>Straight answers</h2>
+    <div style="margin-top:8px">
+      <div class="qa"><h3>Which servers does it run on?</h3><p>Paper 1.21.x and Purpur (tested 1.21.4 and 1.21.11), Java 21. Spigot/Bukkit mostly works but isn't the test target.</p></div>
+      <div class="qa"><h3>How do I get the jar after paying?</h3><p>Email your transaction ID to secondwindmc@proton.me. We verify the payment on-chain and email back the jar — same day, usually within a couple of hours.</p></div>
+      <div class="qa"><h3>Can I get a refund?</h3><p>If the jar doesn't run on a supported version and we can't fix it, you get your crypto back. Email us the txid.</p></div>
+      <div class="qa"><h3>Are updates included?</h3><p>Yes — every 1.x update for the license you bought. Re-email your txid any time to get the newest build.</p></div>
+      <div class="qa"><h3>Is the code obfuscated?</h3><p>No. Unobfuscated, source-verifiable jars — you can decompile and check exactly what runs on your server.</p></div>
+      <div class="qa"><h3>Does it work with lifesteal?</h3><p>Yes — that's a core design constraint. Heart/item effects only trigger on real death (bleed-out or execution), never on being downed.</p></div>
     </div>
   </div>
 </section>
