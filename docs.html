@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docs — SecondWind & GraveGuard configuration</title>
+<meta name="description" content="Full config.yml reference for SecondWind and GraveGuard Minecraft plugins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#000;--panel:#0a0a0a;--border:#262626;--text:#ededed;--muted:#888;--accent:#ff4d5e;--mono:'JetBrains Mono',monospace}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;backdrop-filter:blur(12px);background:rgba(0,0,0,.7);border-bottom:1px solid var(--border)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1040px}
+  .logo{font-weight:800;font-size:1.05rem}
+  .logo span{color:var(--accent)}
+  .nav-cta{font-size:.85rem;font-weight:600;color:#fff;text-decoration:none;padding:8px 16px;border:1px solid var(--border);border-radius:9999px}
+  .nav-cta:hover{background:#fff;color:#000}
+  header{padding:64px 0 32px}
+  .kicker{color:var(--accent);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  h1{font-size:2.2rem;font-weight:800;letter-spacing:-.03em;margin-top:10px}
+  h2{font-size:1.4rem;font-weight:700;margin:48px 0 8px;letter-spacing:-.02em}
+  p.lead{color:var(--muted);margin-top:8px}
+  table{width:100%;border-collapse:collapse;margin:18px 0 8px;font-size:.9rem}
+  th{text-align:left;color:var(--muted);font-weight:600;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;border-bottom:1px solid var(--border)}
+  td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+  td:first-child{font-family:var(--mono);font-size:.82rem;white-space:nowrap;color:#ffb86b}
+  td.d{font-family:var(--mono);font-size:.82rem;color:#7ee787;white-space:nowrap}
+  td:last-child{color:var(--muted)}
+  .note{border:1px solid var(--border);background:var(--panel);border-radius:12px;padding:16px 20px;font-size:.88rem;color:var(--muted);margin-top:24px}
+  .note b{color:var(--text)}
+  code{font-family:var(--mono);font-size:.85em;background:#141414;padding:2px 6px;border-radius:5px}
+  pre{font-family:var(--mono);font-size:.82rem;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px 20px;overflow-x:auto;margin-top:14px;line-height:1.7}
+  footer{border-top:1px solid var(--border);padding:40px 0;margin-top:64px}
+  footer p{color:#666;font-size:.82rem}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><div class="logo">SECOND<span>WIND</span></div><a class="nav-cta" href="index.html">← Back to site</a></div></nav>
+
+<header><div class="wrap">
+  <p class="kicker">Configuration reference</p>
+  <h1>Server docs</h1>
+  <p class="lead">Every key in both plugins' <code>config.yml</code>, and what it changes. Defaults shown ship in the jar — drop it in <code>plugins/</code>, start the server, edit, restart or <code>/sw reload</code>.</p>
+</div></header>
+
+<div class="wrap">
+<h2>SecondWind — <code>config.yml</code></h2>
+<table>
+  <tr><th>Key</th><th>Default</th><th>What it does</th></tr>
+  <tr><td>downed-health</td><td class="d">4.0</td><td>Health a downed player keeps (half-hearts ×2 — 4.0 = 2 hearts).</td></tr>
+  <tr><td>revived-health</td><td class="d">6.0</td><td>Health restored when the revive completes.</td></tr>
+  <tr><td>bleed-out-seconds</td><td class="d">60</td><td>Time on the ground before a downed player dies for real.</td></tr>
+  <tr><td>revive-seconds</td><td class="d">8</td><td>Channel time to revive (sneak-hold, in range).</td></tr>
+  <tr><td>execute-seconds</td><td class="d">10</td><td>Channel time for an enemy to execute.</td></tr>
+  <tr><td>interact-radius</td><td class="d">3.0</td><td>Max distance (blocks) for revive/execute.</td></tr>
+  <tr><td>movement-multiplier</td><td class="d">0.15</td><td>Crawl speed as a fraction of walk speed; 0 = immobile.</td></tr>
+  <tr><td>post-revive-invulnerable-seconds</td><td class="d">5</td><td>Grace period after being revived.</td></tr>
+  <tr><td>bossbar-visible-radius</td><td class="d">16</td><td>How far the bleed-out boss bar is visible.</td></tr>
+  <tr><td>revivers</td><td class="d">ANYONE</td><td><code>ANYONE</code> or <code>TEAM</code> (same scoreboard team).</td></tr>
+  <tr><td>executors</td><td class="d">ENEMY</td><td><code>ENEMY</code>, <code>ANYONE</code>, or <code>NONE</code>.</td></tr>
+  <tr><td>channel-interrupt-on-damage</td><td class="d">true</td><td>Damage breaks an in-progress revive/execute.</td></tr>
+  <tr><td>allow-crawl</td><td class="d">true</td><td>false = downed players can't move at all.</td></tr>
+  <tr><td>kill-on-logout</td><td class="d">true</td><td>Combat-logging while downed = real death.</td></tr>
+  <tr><td>broadcast-on-down</td><td class="d">true</td><td>Announces "&lt;player&gt; is down!" in chat.</td></tr>
+  <tr><td>exempt-causes</td><td class="d">VOID, SUICIDE, WORLD_BORDER, CUSTOM</td><td>Damage causes that kill outright instead of downing.</td></tr>
+  <tr><td>disabled-worlds</td><td class="d">[]</td><td>Worlds where normal death applies.</td></tr>
+  <tr><td>blocked-commands</td><td class="d">spawn, home, tpa, tpaccept, tpahere, warp, back</td><td>Commands a downed player can't run.</td></tr>
+  <tr><td>debug</td><td class="d">false</td><td>Verbose console logging.</td></tr>
+</table>
+
+<h3>Admin commands</h3>
+<pre>/sw down &lt;player&gt;     force a player into the downed state
+/sw revive &lt;player&gt;   instantly revive
+/sw execute &lt;player&gt;  instantly execute
+/sw status          show all currently downed players
+/sw reload          reload config.yml + messages.yml</pre>
+
+<h2>GraveGuard — <code>config.yml</code></h2>
+<table>
+  <tr><th>Key</th><th>Default</th><th>What it does</th></tr>
+  <tr><td>protection-seconds</td><td class="d">120</td><td>Time only the owner (and ops) can open the grave.</td></tr>
+  <tr><td>despawn-seconds</td><td class="d">600</td><td>Until the grave despawns entirely (0 = never).</td></tr>
+  <tr><td>max-search-height</td><td class="d">8</td><td>Blocks searched upward from the death point to place the grave.</td></tr>
+  <tr><td>hologram</td><td class="d">true</td><td>Floating owner + countdown text above the grave.</td></tr>
+  <tr><td>store-xp</td><td class="d">true</td><td>Player XP is stored in the grave too.</td></tr>
+  <tr><td>return-compass</td><td class="d">true</td><td>Give the owner a "Last Grave" compass on respawn.</td></tr>
+  <tr><td>messages.*</td><td class="d">—</td><td>Every chat line is editable, with <code>%time%</code>/<code>%owner%</code>/<code>%loc%</code> placeholders.</td></tr>
+  <tr><td>prefix</td><td class="d">[&amp;6GraveGuard&amp;8]</td><td>Chat message prefix (color codes supported).</td></tr>
+</table>
+
+<div class="note">
+  <b>Compatibility:</b> both plugins target <b>Paper 1.21.x</b> (tested 1.21.4 &amp; 1.21.11), Java 21, zero dependencies. They run fine side by side — SecondWind handles the down; if the player still dies, GraveGuard guards the loot.
+</div>
+
+<div class="note">
+  <b>Support:</b> email <a href="mailto:secondwindmc@proton.me">secondwindmc@proton.me</a> with your server version and any console errors — replies within hours.
+</div>
+</div>
+
+<footer><div class="wrap"><p>© 2026 SecondWindMC · secondwindmc@proton.me</p></div></footer>
+</body>
+</html>
