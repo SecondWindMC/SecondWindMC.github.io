@@ -172,6 +172,34 @@
   .bundle h3 { font-size:1.05rem; font-weight:600; }
   .bundle p { color:var(--muted); font-size:.9rem; margin-top:4px; }
 
+  /* checkout */
+  .pay-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:36px 0; }
+  .pay {
+    border:1px solid var(--border); border-radius:14px; padding:20px;
+    background:var(--panel); text-align:center; transition:border-color .15s;
+  }
+  .pay:hover { border-color:#3d3d3d; }
+  .pay .coin { font-weight:700; font-size:.95rem; }
+  .pay .net { font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--muted); margin-top:2px; }
+  .pay img { width:130px; height:130px; margin:14px auto; display:block; border-radius:8px; background:#fff; padding:6px; }
+  .pay .addr {
+    font-family:'JetBrains Mono',monospace; font-size:.62rem; color:var(--muted);
+    word-break:break-all; background:#111; border:1px solid var(--border);
+    border-radius:8px; padding:8px; user-select:all; cursor:text; line-height:1.5;
+  }
+  .pay .copy {
+    margin-top:10px; font-size:.78rem; font-weight:600; color:var(--text);
+    background:none; border:1px solid var(--border); border-radius:8px;
+    padding:7px 14px; cursor:pointer; transition:.15s; font-family:inherit;
+  }
+  .pay .copy:hover { border-color:#4d4d4d; background:#0f0f0f; }
+  .deliver {
+    border:1px solid var(--accent-dim); background:var(--accent-dim);
+    border-radius:14px; padding:22px 26px; font-size:.92rem; color:var(--text);
+  }
+  .deliver b { color:#fff; }
+  .deliver a { color:var(--accent); }
+
   footer { border-top:1px solid var(--border); padding:44px 0; }
   footer .wrap { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   footer p { color:#666; font-size:.82rem; }
@@ -182,7 +210,7 @@
 <nav>
   <div class="wrap">
     <div class="logo">SECOND<span>WIND</span></div>
-    <a class="nav-cta" href="https://builtbybit.com/resources/secondwind.141334/" target="_blank" rel="noopener">Get the plugin</a>
+    <a class="nav-cta" href="#buy">Get the plugin</a>
   </div>
 </nav>
 
@@ -193,7 +221,7 @@
     <h1>Downed.<br><span class="grad">Not dead.</span></h1>
     <p class="sub">Lethal damage drops players into a crawling bleed-out state. Teammates revive. Enemies execute. Every fight becomes a decision.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://builtbybit.com/resources/secondwind.141334/" target="_blank" rel="noopener">Get SecondWind — $5.99</a>
+      <a class="btn btn-primary" href="#buy">Get SecondWind — $5.99</a>
       <a class="btn btn-ghost" href="#how">How it works</a>
     </div>
   </div>
@@ -248,9 +276,9 @@
     <div class="bundle">
       <div>
         <h3>GraveGuard — companion plugin</h3>
-        <p>Deaths spawn a protected grave chest: items + XP stored, hologram countdown, return compass. $4.99 on BuiltByBit.</p>
+        <p>Deaths spawn a protected grave chest: items + XP stored, hologram countdown, return compass. $4.99 — or $8.99 bundled with SecondWind.</p>
       </div>
-      <a class="btn btn-ghost" href="https://builtbybit.com/members/secondwindmc.1005716/" target="_blank" rel="noopener">View on BuiltByBit</a>
+      <a class="btn btn-ghost" href="#buy">$4.99 — buy with crypto</a>
     </div>
   </div>
 </section>
@@ -265,9 +293,46 @@
         <li>Full source-verified jar, unobfuscated</li>
         <li>config.yml + messages.yml — everything editable</li>
         <li>Tested end-to-end on live Paper servers</li>
-        <li>Support via BuiltByBit conversations</li>
+        <li>Support via email — replies within hours</li>
       </ul>
-      <a class="btn btn-primary" style="width:100%;justify-content:center" href="https://builtbybit.com/resources/secondwind.141334/" target="_blank" rel="noopener">Get SecondWind on BuiltByBit</a>
+      <a class="btn btn-primary" style="width:100%;justify-content:center" href="#buy">Buy now — instant crypto checkout</a>
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="wrap">
+    <p class="kicker">Checkout</p>
+    <h2>Pay with crypto, get the jar by email</h2>
+    <p class="lead">Send <b style="color:var(--text)">$5.99</b> worth of any coin below to its address (or <b style="color:var(--text)">$8.99</b> for SecondWind + GraveGuard bundle). Then email your transaction ID to <a href="mailto:secondwindmc@proton.me" style="color:var(--accent)">secondwindmc@proton.me</a> — the plugin lands in your inbox within a few hours, usually much faster.</p>
+    <div class="pay-grid">
+      <div class="pay">
+        <div class="coin">Bitcoin</div><div class="net">BTC · SegWit</div>
+        <img src="qr/btc.png" alt="BTC address QR">
+        <div class="addr">bc1qduyf6jmsyzxkvc005xvwwfhp7jjuaesfacjptd</div>
+        <button class="copy" onclick="navigator.clipboard.writeText('bc1qduyf6jmsyzxkvc005xvwwfhp7jjuaesfacjptd');this.textContent='Copied'">Copy address</button>
+      </div>
+      <div class="pay">
+        <div class="coin">Litecoin</div><div class="net">LTC · lowest fees</div>
+        <img src="qr/ltc.png" alt="LTC address QR">
+        <div class="addr">ltc1q263ghvn2263ftjnfy5ku7n8ttn3shkturvmk87</div>
+        <button class="copy" onclick="navigator.clipboard.writeText('ltc1q263ghvn2263ftjnfy5ku7n8ttn3shkturvmk87');this.textContent='Copied'">Copy address</button>
+      </div>
+      <div class="pay">
+        <div class="coin">USDT</div><div class="net">TRC20 · Tron network</div>
+        <img src="qr/usdt.png" alt="USDT TRC20 address QR">
+        <div class="addr">TAmxYpeocpd2tuJTZU88URH6CrfBn3RrBK</div>
+        <button class="copy" onclick="navigator.clipboard.writeText('TAmxYpeocpd2tuJTZU88URH6CrfBn3RrBK');this.textContent='Copied'">Copy address</button>
+      </div>
+      <div class="pay">
+        <div class="coin">ETH / USDC</div><div class="net">Ethereum mainnet</div>
+        <img src="qr/eth.png" alt="ETH address QR">
+        <div class="addr">0xadE6cb98e7a6d5c1804Df01Bd862Cb1599391A8D</div>
+        <button class="copy" onclick="navigator.clipboard.writeText('0xadE6cb98e7a6d5c1804Df01Bd862Cb1599391A8D');this.textContent='Copied'">Copy address</button>
+      </div>
+    </div>
+    <div class="deliver">
+      <b>How delivery works:</b> your payment is picked up by our wallet monitor automatically. Email <a href="mailto:secondwindmc@proton.me">secondwindmc@proton.me</a> with your transaction ID and which product you bought (SecondWind, GraveGuard, or the bundle) — we verify on-chain and send the jar back the same day. Questions before buying? Same address.
     </div>
   </div>
 </section>
