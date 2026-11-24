@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SecondWind — Downed. Not Dead.</title>
 <meta name="description" content="DBNO revive plugin for Minecraft Paper 1.21+ servers. Crawl, bleed out, get revived or executed.">
+<link rel="icon" type="image/png" href="og-hero.png">
+<meta property="og:title" content="SecondWind — Downed. Not dead.">
+<meta property="og:description" content="DBNO revive plugin for Paper 1.21.x. Crawl, bleed out, get revived or executed. $5.99.">
+<meta property="og:image" content="og-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SecondWind — Downed. Not dead.">
+<meta name="twitter:description" content="DBNO revive plugin for Paper 1.21.x. Crawl, bleed out, get revived or executed.">
+<meta name="twitter:image" content="og-hero.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -53,6 +61,11 @@
       radial-gradient(ellipse 60% 45% at 50% 0%, rgba(255,77,94,.16), transparent 70%);
     pointer-events:none;
   }
+  .hero-img {
+    margin-top:48px; border:1px solid var(--border); border-radius:16px;
+    overflow:hidden; box-shadow:0 40px 120px rgba(255,77,94,.15);
+  }
+  .hero-img img { display:block; width:100%; }
   .grid-bg {
     position:absolute; inset:0;
     background-image:
@@ -224,6 +237,7 @@
       <a class="btn btn-primary" href="#buy">Get SecondWind — $5.99</a>
       <a class="btn btn-ghost" href="#how">How it works</a>
     </div>
+    <div class="hero-img"><img src="og-hero.png" alt="A downed player crawling while a teammate channels a revive"></div>
   </div>
 </header>
 
