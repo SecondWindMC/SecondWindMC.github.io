@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SecondWind — Downed. Not Dead.</title>
-<meta name="description" content="DBNO revive plugin for Minecraft Paper 1.21+ servers. Crawl, bleed out, get revived or executed.">
+<title>SecondWindMC — Paper SMP death mechanics</title>
+<meta name="description" content="SecondWind DBNO revives and GraveGuard restart-safe death chests for Minecraft Paper 1.21.x servers.">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
-<meta property="og:title" content="SecondWind — Downed. Not dead.">
-<meta property="og:description" content="DBNO revive plugin for Paper 1.21.x. Crawl, bleed out, get revived or executed. $5.99.">
+<meta property="og:title" content="SecondWindMC — Paper SMP death mechanics">
+<meta property="og:description" content="SecondWind revives plus GraveGuard restart-safe death chests. Free community downloads; premium preset/support bundle available.">
 <meta property="og:image" content="og-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SecondWind — Downed. Not dead.">
-<meta name="twitter:description" content="DBNO revive plugin for Paper 1.21.x. Crawl, bleed out, get revived or executed.">
+<meta name="twitter:title" content="SecondWindMC — Paper SMP death mechanics">
+<meta name="twitter:description" content="SecondWind revives plus GraveGuard restart-safe death chests for Paper 1.21.x servers.">
 <meta name="twitter:image" content="og-hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,7 +235,7 @@
 <nav>
   <div class="wrap">
     <div class="logo"><img src="icon-192.png" alt="" style="width:24px;height:24px;border-radius:6px;vertical-align:-6px;margin-right:8px">SECOND<span>WIND</span></div>
-    <a class="nav-cta" href="#buy">Get the plugin</a>
+    <a class="nav-cta" href="#buy">Get the bundle</a>
   </div>
 </nav>
 
@@ -246,7 +246,7 @@
     <h1>Downed.<br><span class="grad">Not dead.</span></h1>
     <p class="sub">Lethal damage drops players into a crawling bleed-out state. Teammates revive. Enemies execute. Every fight becomes a decision.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#buy">Get SecondWind — $5.99</a>
+      <a class="btn btn-primary" href="#buy" onclick="selectPlan('bundle')">Get the bundle — $8.99</a>
       <a class="btn btn-ghost" href="#how">How it works</a>
     </div>
     <div class="hero-img"><img src="og-hero.jpg" alt="A downed player crawling while a teammate channels a revive"></div>
@@ -334,7 +334,7 @@
           <li>All 1.x updates included</li>
           <li>Email support, normally within 24 hours</li>
         </ul>
-        <a class="btn btn-ghost" style="width:100%;justify-content:center" href="#buy">Buy SecondWind</a>
+        <a class="btn btn-ghost" style="width:100%;justify-content:center" href="#buy" onclick="selectPlan('secondwind')">Buy SecondWind</a>
       </div>
       <div class="price-card">
         <p class="kicker" style="margin-bottom:0">GraveGuard</p>
@@ -345,7 +345,7 @@
           <li>All 1.x updates included</li>
           <li>Email support, normally within 24 hours</li>
         </ul>
-        <a class="btn btn-ghost" style="width:100%;justify-content:center" href="#buy">Buy GraveGuard</a>
+        <a class="btn btn-ghost" style="width:100%;justify-content:center" href="#buy" onclick="selectPlan('graveguard')">Buy GraveGuard</a>
       </div>
       <div class="price-card best">
         <p class="kicker" style="margin-bottom:0">Best value</p>
@@ -356,7 +356,7 @@
           <li>Casual SMP, Hardcore/Lifesteal, Raid/Factions presets</li>
           <li>SHA-256 checksums and combined install guide</li>
         </ul>
-        <a class="btn btn-primary" style="width:100%;justify-content:center" href="#buy">Buy the bundle</a>
+        <a class="btn btn-primary" style="width:100%;justify-content:center" href="#buy" onclick="selectPlan('bundle')">Buy the bundle</a>
       </div>
     </div>
     <p style="color:var(--muted);font-size:.85rem;margin-top:18px;text-align:center">Free community downloads on <a href="https://hangar.papermc.io/SecondWindMC/SecondWindRevive" style="color:var(--accent)">Hangar</a> and <a href="https://github.com/SecondWindMC" style="color:var(--accent)">GitHub</a>. Buying the bundle adds the preset pack, convenience, updates, and priority support.</p>
@@ -367,7 +367,7 @@
   <div class="wrap">
     <p class="kicker">Checkout</p>
     <h2>Pay with crypto, get the package by email</h2>
-    <p class="lead">Send <b style="color:var(--text)">$5.99</b> worth of any coin below to its address (or <b style="color:var(--text)">$8.99</b> for SecondWind + GraveGuard bundle). Then email your transaction ID to <a href="mailto:secondwindmc@proton.me" style="color:var(--accent)">secondwindmc@proton.me</a>. Delivery is manual after on-chain verification; allow up to 24 hours.</p>
+    <p class="lead">Selected package: <b style="color:var(--text)" id="plan-name">SecondWind + GraveGuard bundle</b> — <b style="color:var(--text)" id="plan-price">$8.99</b>. Send that amount in any coin below to its address, then email your transaction ID to <a href="mailto:secondwindmc@proton.me" style="color:var(--accent)" id="plan-mail-link">secondwindmc@proton.me</a>. Delivery is manual after on-chain verification; allow up to 24 hours.</p>
     <div class="pay-grid">
       <div class="pay">
         <div class="coin">Bitcoin</div><div class="net">BTC · SegWit</div>
@@ -395,7 +395,7 @@
       </div>
     </div>
     <div class="deliver">
-      <b>How delivery works:</b> email <a href="mailto:secondwindmc@proton.me">secondwindmc@proton.me</a> with your transaction ID and which product you bought (SecondWind, GraveGuard, or the bundle). We manually verify the payment on-chain and email back the correct package, normally within 24 hours. Questions before buying? Same address.
+      <b>How delivery works:</b> email <a href="mailto:secondwindmc@proton.me" id="delivery-mail-link">secondwindmc@proton.me</a> with your transaction ID and selected package. We manually verify the payment on-chain and email back the correct package, normally within 24 hours. <a href="mailto:secondwindmc@proton.me" id="email-template-link"><b>Open a pre-filled delivery email</b></a>. Questions before buying? Same address.
     </div>
   </div>
 </section>
@@ -422,5 +422,24 @@
   </div>
 </footer>
 
+<script>
+const PLANS = {
+  secondwind: { name: 'SecondWind', price: '$5.99' },
+  graveguard: { name: 'GraveGuard', price: '$4.99' },
+  bundle: { name: 'SecondWind + GraveGuard bundle', price: '$8.99' }
+};
+function selectPlan(key) {
+  const plan = PLANS[key] || PLANS.bundle;
+  document.getElementById('plan-name').textContent = plan.name;
+  document.getElementById('plan-price').textContent = plan.price;
+  const subject = encodeURIComponent('SecondWindMC order — ' + plan.name);
+  const body = encodeURIComponent('Product: ' + plan.name + '\nAmount sent: ' + plan.price + '\nCryptocurrency/network: \nTransaction ID: \n\nPlease verify and deliver the package. Thank you.');
+  const href = 'mailto:secondwindmc@proton.me?subject=' + subject + '&body=' + body;
+  document.getElementById('plan-mail-link').href = href;
+  document.getElementById('delivery-mail-link').href = href;
+  document.getElementById('email-template-link').href = href;
+}
+selectPlan('bundle');
+</script>
 </body>
 </html>
