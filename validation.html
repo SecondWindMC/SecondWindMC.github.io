@@ -23,16 +23,21 @@
 <div class="card"><span class="ok">PASS</span> — the grave survived a full server restart and was reloaded from persistent state.</div>
 <div class="card"><span class="ok">PASS</span> — a separate intruder client could not obtain protected items, and the owner could still recover the full inventory afterward.</div>
 
-<h2>SecondWind 1.0.0</h2>
+<h2>SecondWind 1.0.0 / 1.1.0</h2>
 <div class="card"><span class="ok">PASS</span> — lethal player damage put the victim into the downed state at 4 health instead of causing immediate death.</div>
 <div class="card"><span class="ok">PASS</span> — the victim remained in place instead of respawning.</div>
 <div class="card"><span class="ok">PASS</span> — a nearby teammate holding sneak completed the revive channel.</div>
 <div class="card"><span class="ok">PASS</span> — revived health matched the configured value of 6.</div>
 
+<h3>v1.1.0 crash-persistence validation</h3>
+<div class="card"><span class="ok">PASS</span> — a player forced into the downed state was persisted with 48.6 seconds remaining before the server process was terminated with <code>kill -9</code>.</div>
+<div class="card"><span class="ok">PASS</span> — after restart and rejoin, the same player was still downed at 4 health with the bleed-out timer running (46 seconds reported).</div>
+<div class="card"><span class="ok">PASS</span> — admin revive restored the player and cleared the persisted downed state.</div>
+
 <h2>Bundle artifact</h2>
 <table>
 <tr><th>Artifact</th><td><code>smp-mechanics-bundle-v1.zip</code></td></tr>
-<tr><th>SHA-256</th><td><code>4e245b725279910166685dbec976196087c167fc301388719b11225e82a3f29a</code></td></tr>
+<tr><th>SHA-256</th><td><code>878654ced87d25ffc732eeca3b75b728149e03c20a795fbaa38f5189cb9c33b5</code></td></tr>
 <tr><th>Presets</th><td><code>casual-smp</code>, <code>hardcore-lifesteal</code>, and <code>raid-factions</code>; all six YAML files parse successfully.</td></tr>
 </table>
 <p>These automated checks validate functionality in the stated environment. They are not a claim of compatibility with every plugin stack or every Paper fork.</p>
