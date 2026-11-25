@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Retro Sound Effects for Godot — CC0 Sample Pack</title>
+<meta name="description" content="Download 12 free CC0 retro sound effects packaged for Godot. WAV files for UI clicks, coins, pickups, jumps, lasers, explosions, and success cues.">
+<meta property="og:title" content="Free Retro Sound Effects for Godot">
+<meta property="og:description" content="12 CC0 procedural retro game sound effects packaged as a clean Godot addon folder.">
+<meta property="og:image" content="https://secondwindmc.github.io/assets/circuit-ui-cover.png">
+<link rel="icon" href="favicon-32.png" type="image/png">
+<style>
+:root{--bg:#090b10;--panel:#111620;--panel2:#151c28;--text:#eef4ff;--muted:#96a0b5;--accent:#52e0b6;--accent2:#6ea8ff;--line:#263145}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#142033 0,#090b10 38rem);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.55}.wrap{max-width:1120px;margin:auto;padding:0 24px}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:800}.brand img{width:32px;height:32px;border-radius:8px}.btn{display:inline-block;border-radius:10px;padding:12px 18px;text-decoration:none;font-weight:750;border:1px solid var(--line);color:var(--text);background:var(--panel2);cursor:pointer;font-size:1rem}.btn-primary{background:linear-gradient(135deg,var(--accent),#35a7ff);border:0;color:#061015}.btn-ghost:hover{border-color:var(--accent)}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center;padding:56px 0}.kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:800}h1{font-size:clamp(2.2rem,5vw,4.8rem);line-height:.98;margin:10px 0 18px}h2{font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.1;margin:0 0 16px}.lead{color:var(--muted);font-size:1.18rem;max-width:62ch}.cover{width:100%;border-radius:22px;border:1px solid var(--line);box-shadow:0 28px 80px #0009}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 12px}.note{color:var(--muted);font-size:.9rem}.panel{background:linear-gradient(180deg,var(--panel),#0d1119);border:1px solid var(--line);border-radius:18px;padding:24px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}.card h3{margin:0 0 8px}.card p{color:var(--muted);margin:0}.section{padding:58px 0}.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.price{font-size:3rem;font-weight:900;letter-spacing:-.04em}.price small{font-size:1rem;color:var(--muted);letter-spacing:0}.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;color:var(--muted);padding:0;list-style:none}.cats li{background:#0e131d;border:1px solid var(--line);border-radius:999px;padding:8px 12px}.audio{width:100%;margin-top:18px}.table{width:100%;border-collapse:collapse;margin-top:18px;color:var(--muted)}.table th,.table td{border-bottom:1px solid var(--line);padding:10px;text-align:left}.table th{color:var(--text)}footer{color:var(--muted);border-top:1px solid var(--line);padding:28px 0;margin-top:40px}a{color:var(--accent)}@media(max-width:800px){.hero,.split{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:28px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav"><a class="brand" href="/"><img src="brand-pfp-512.png" alt="">SecondWindMC</a><a class="btn btn-ghost" href="circuit-ui-sfx.html">Circuit UI SFX</a></nav>
+  <section class="hero">
+    <div>
+      <p class="kicker">Godot audio assets</p>
+      <h1>Free retro sound effects for Godot</h1>
+      <p class="lead">Download 12 CC0 procedural retro sound effects packaged in a Godot-friendly <code>addons</code> folder: UI clicks, confirms, errors, coins, pickups, powerups, jumps, hits, lasers, explosions, success, and secret cues.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/SecondWindMC/CircuitUI-SFX/releases/download/v1.0-sample/CircuitUI-SFX-Godot-v1.0.0.zip">Download Godot sample zip</a>
+        <a class="btn btn-ghost" href="circuit-ui-sfx.html">Preview the sounds</a>
+        <a class="btn btn-ghost" href="retro-sfx-lab.html">Generate your own</a>
+      </div>
+      <p class="note">CC0 public domain sample. No attribution required. SecondWindMC is not affiliated with the Godot Foundation.</p>
+    </div>
+    <img class="cover" src="assets/circuit-ui-cover.png" alt="Circuit UI retro sound effects cover">
+  </section>
+
+  <section class="section split">
+    <div class="panel">
+      <p class="kicker">Import</p>
+      <h2>How to use the sounds in Godot</h2>
+      <ol class="lead" style="font-size:1rem">
+        <li>Download and extract the zip file.</li>
+        <li>Extract the zip into your Godot project root so the files land in <code>addons/circuit_ui_sfx_free_sample/audio/</code>.</li>
+        <li>Add an <b>AudioStreamPlayer</b> node where the feedback should happen.</li>
+        <li>Load a WAV file as the stream, or call it from GDScript: <code>$AudioStreamPlayer.stream = load("res://addons/circuit_ui_sfx_free_sample/audio/ui-click-01.wav")</code></li>
+      </ol>
+    </div>
+    <div class="panel">
+      <p class="kicker">Package details</p>
+      <h2>Small one-shot WAV cues</h2>
+      <table class="table">
+        <tr><th>License</th><td>CC0 1.0 public domain</td></tr>
+        <tr><th>Format</th><td>WAV, non-looping one-shot effects</td></tr>
+        <tr><th>Count</th><td>12 free sample sounds</td></tr>
+        <tr><th>Best for</th><td>Godot 4 projects, game jams, prototypes, pixel-art games, arcade mechanics, UI feedback</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="kicker">Need more?</p>
+    <h2>Test the full retro sound pack</h2>
+    <p class="lead">The free sample is enough for a small prototype. The full Circuit UI SFX pack expands the same sound palette to 148 organized retro effects in WAV, OGG, and MP3, including more UI variations and action cues.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="circuit-ui-sfx.html">Open Circuit UI SFX</a><a class="btn btn-ghost" href="https://store.godotengine.org/asset/secondwindmc/circuit-ui-sfx-free-sample/">Godot Asset Store page</a><a class="btn btn-ghost" href="https://github.com/SecondWindMC/CircuitUI-SFX">GitHub sample repository</a></div>
+  </section>
+  <footer>© 2026 SecondWindMC · <a href="/">Minecraft plugins</a> · <a href="circuit-ui-sfx.html">Circuit UI SFX</a> · <a href="retro-sfx-lab.html">Retro SFX Lab</a></footer>
+</div>
+</body>
+</html>
