@@ -225,6 +225,14 @@
   .qa p { color:var(--muted); font-size:.9rem; }
   @media (max-width:700px){ .qa { grid-template-columns:1fr; gap:6px; } }
 
+
+  .preset-table { width:100%; border-collapse:collapse; margin-top:24px; font-size:.88rem; overflow:hidden; border-radius:12px; }
+  .preset-table th, .preset-table td { border-bottom:1px solid var(--border); padding:12px 14px; text-align:left; vertical-align:top; }
+  .preset-table th { color:var(--muted); font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; }
+  .preset-table td:first-child { color:var(--text); font-weight:700; white-space:nowrap; }
+  .preset-table td { color:var(--muted); }
+  .preset-table code { font-size:.78rem; }
+
   footer { border-top:1px solid var(--border); padding:44px 0; }
   footer .wrap { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
   footer p { color:#666; font-size:.82rem; }
@@ -366,6 +374,21 @@
       </div>
     </div>
     <p style="color:var(--muted);font-size:.85rem;margin-top:18px;text-align:center">Free community downloads on <a href="https://hangar.papermc.io/SecondWindMC/SecondWindRevive" style="color:var(--accent)">Hangar</a> and <a href="https://github.com/SecondWindMC" style="color:var(--accent)">GitHub</a>. Buying the bundle adds the preset pack, convenience, updates, and priority support.</p>
+  </div>
+</section>
+
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Premium presets</p>
+    <h2>Pick a ruleset, copy two files, restart</h2>
+    <p class="lead">The bundle includes three starting configurations tuned for different server cultures. Exact values shown below.</p>
+    <table class="preset-table">
+      <tr><th>Preset</th><th>SecondWind rules</th><th>GraveGuard rules</th><th>Best for</th></tr>
+      <tr><td>Casual SMP</td><td>120s bleed-out · 5s revive · no executions · anyone can revive</td><td>300s protection · 30min despawn · exact XP</td><td>Community SMPs</td></tr>
+      <tr><td>Hardcore / Lifesteal</td><td>45s bleed-out · 10s revive · 6s enemy execution · team-only revives</td><td>45s protection · 10min despawn · vanilla-drop XP</td><td>High-stakes PvP</td></tr>
+      <tr><td>Raid / Factions</td><td>60s bleed-out · 7s revive · 7s enemy execution · team-only revives</td><td>90s protection · 15min despawn · exact XP</td><td>Raid and faction servers</td></tr>
+    </table>
   </div>
 </section>
 
