@@ -178,6 +178,11 @@
   .price-feats { text-align:left; margin:26px auto 30px; max-width:290px; }
   .price-feats li { list-style:none; color:var(--muted); font-size:.9rem; padding:7px 0; border-bottom:1px solid #161616; }
   .price-feats li::before { content:'✓'; color:#3f3; margin-right:10px; font-weight:700; }
+  .price-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; }
+  .price-grid .price-card { max-width:none; width:100%; padding:34px 28px; }
+  .price-grid .amount { font-size:2.7rem; }
+  .best { border-color:var(--accent) !important; box-shadow:0 0 44px rgba(255,77,94,.12); }
+  .plan-note { min-height:38px; }
 
   /* bundle strip */
   .bundle {
@@ -229,7 +234,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="logo">SECOND<span>WIND</span></div>
+    <div class="logo"><img src="icon-192.png" alt="" style="width:24px;height:24px;border-radius:6px;vertical-align:-6px;margin-right:8px">SECOND<span>WIND</span></div>
     <a class="nav-cta" href="#buy">Get the plugin</a>
   </div>
 </nav>
@@ -317,26 +322,51 @@
 
 <section>
   <div class="wrap">
-    <div class="price-card">
-      <p class="kicker" style="margin-bottom:0">Pricing</p>
-      <div class="amount">$5.99 <small>one-time</small></div>
-      <p style="color:var(--muted);font-size:.9rem">Per server. All 1.x updates included.</p>
-      <ul class="price-feats">
-        <li>Full source-verified jar, unobfuscated</li>
-        <li>config.yml + messages.yml — everything editable</li>
-        <li>Tested end-to-end on live Paper servers</li>
-        <li>Support via email — manual replies, normally within 24 hours</li>
-      </ul>
-      <a class="btn btn-primary" style="width:100%;justify-content:center" href="#buy">Buy now — manual crypto checkout</a>
-      <p style="color:var(--muted);font-size:.8rem;margin-top:12px;text-align:center">Free community downloads on <a href="https://hangar.papermc.io/SecondWindMC/SecondWindRevive" style="color:var(--accent)">Hangar</a> and <a href="https://github.com/SecondWindMC/SecondWindRevive/releases" style="color:var(--accent)">GitHub</a> — buying supports development and gets you priority email support.</p>
+    <p class="kicker">Pricing</p>
+    <h2>Pick the package that fits your server</h2>
+    <div class="price-grid" style="margin-top:34px">
+      <div class="price-card">
+        <p class="kicker" style="margin-bottom:0">SecondWind</p>
+        <div class="amount">$5.99 <small>one-time</small></div>
+        <p class="plan-note" style="color:var(--muted);font-size:.9rem">DBNO revives, executions, anti-abuse, full config.</p>
+        <ul class="price-feats">
+          <li>Source-verified unobfuscated jar</li>
+          <li>All 1.x updates included</li>
+          <li>Email support, normally within 24 hours</li>
+        </ul>
+        <a class="btn btn-ghost" style="width:100%;justify-content:center" href="#buy">Buy SecondWind</a>
+      </div>
+      <div class="price-card">
+        <p class="kicker" style="margin-bottom:0">GraveGuard</p>
+        <div class="amount">$4.99 <small>one-time</small></div>
+        <p class="plan-note" style="color:var(--muted);font-size:.9rem">Restart-safe protected death graves and exact XP recovery.</p>
+        <ul class="price-feats">
+          <li>GraveGuard 1.1.0 jar</li>
+          <li>All 1.x updates included</li>
+          <li>Email support, normally within 24 hours</li>
+        </ul>
+        <a class="btn btn-ghost" style="width:100%;justify-content:center" href="#buy">Buy GraveGuard</a>
+      </div>
+      <div class="price-card best">
+        <p class="kicker" style="margin-bottom:0">Best value</p>
+        <div class="amount">$8.99 <small>bundle</small></div>
+        <p class="plan-note" style="color:var(--muted);font-size:.9rem">Both plugins plus premium presets, checksums, install guide, updates, and support.</p>
+        <ul class="price-feats">
+          <li>SecondWind + GraveGuard 1.1.0</li>
+          <li>Casual SMP, Hardcore/Lifesteal, Raid/Factions presets</li>
+          <li>SHA-256 checksums and combined install guide</li>
+        </ul>
+        <a class="btn btn-primary" style="width:100%;justify-content:center" href="#buy">Buy the bundle</a>
+      </div>
     </div>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:18px;text-align:center">Free community downloads on <a href="https://hangar.papermc.io/SecondWindMC/SecondWindRevive" style="color:var(--accent)">Hangar</a> and <a href="https://github.com/SecondWindMC" style="color:var(--accent)">GitHub</a>. Buying the bundle adds the preset pack, convenience, updates, and priority support.</p>
   </div>
 </section>
 
 <section id="buy">
   <div class="wrap">
     <p class="kicker">Checkout</p>
-    <h2>Pay with crypto, get the jar by email</h2>
+    <h2>Pay with crypto, get the package by email</h2>
     <p class="lead">Send <b style="color:var(--text)">$5.99</b> worth of any coin below to its address (or <b style="color:var(--text)">$8.99</b> for SecondWind + GraveGuard bundle). Then email your transaction ID to <a href="mailto:secondwindmc@proton.me" style="color:var(--accent)">secondwindmc@proton.me</a>. Delivery is manual after on-chain verification; allow up to 24 hours.</p>
     <div class="pay-grid">
       <div class="pay">
@@ -365,7 +395,7 @@
       </div>
     </div>
     <div class="deliver">
-      <b>How delivery works:</b> email <a href="mailto:secondwindmc@proton.me">secondwindmc@proton.me</a> with your transaction ID and which product you bought (SecondWind, GraveGuard, or the bundle). We manually verify the payment on-chain and email back the jar, normally within 24 hours. Questions before buying? Same address.
+      <b>How delivery works:</b> email <a href="mailto:secondwindmc@proton.me">secondwindmc@proton.me</a> with your transaction ID and which product you bought (SecondWind, GraveGuard, or the bundle). We manually verify the payment on-chain and email back the correct package, normally within 24 hours. Questions before buying? Same address.
     </div>
   </div>
 </section>
@@ -376,8 +406,8 @@
     <h2>Straight answers</h2>
     <div style="margin-top:8px">
       <div class="qa"><h3>Which servers does it run on?</h3><p>Paper 1.21.x and Purpur (tested 1.21.4 and 1.21.11), Java 21. Spigot/Bukkit mostly works but isn't the test target.</p></div>
-      <div class="qa"><h3>How do I get the jar after paying?</h3><p>Email your transaction ID to secondwindmc@proton.me. We manually verify the payment on-chain and email back the jar, normally within 24 hours.</p></div>
-      <div class="qa"><h3>Can I get a refund?</h3><p>If the jar doesn't run on a supported version and we can't fix it, you get your crypto back. Email us the txid.</p></div>
+      <div class="qa"><h3>How do I get the jar after paying?</h3><p>Email your transaction ID to secondwindmc@proton.me. We manually verify the payment on-chain and email back the correct package, normally within 24 hours.</p></div>
+      <div class="qa"><h3>Can I get a refund?</h3><p>If the plugin package doesn't run on a supported version and we can't fix it, you get your crypto back. Email us the txid.</p></div>
       <div class="qa"><h3>Are updates included?</h3><p>Yes — every 1.x update for the license you bought. Re-email your txid any time to get the newest build.</p></div>
       <div class="qa"><h3>Is the code obfuscated?</h3><p>No. Unobfuscated, source-verifiable jars — you can decompile and check exactly what runs on your server.</p></div>
       <div class="qa"><h3>Does it work with lifesteal?</h3><p>Yes — that's a core design constraint. Heart/item effects only trigger on real death (bleed-out or execution), never on being downed.</p></div>
