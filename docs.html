@@ -44,7 +44,7 @@
 <header><div class="wrap">
   <p class="kicker">Configuration reference</p>
   <h1>Server docs</h1>
-  <p class="lead">Every key in both plugins' <code>config.yml</code>, and what it changes. Defaults shown ship in the jar — drop it in <code>plugins/</code>, start the server, edit, restart or <code>/sw reload</code>.</p>
+  <p class="lead">Every key in both plugins' <code>config.yml</code>, and what it changes. Defaults shown ship in the jar — drop it in <code>plugins/</code>, start the server, edit, restart or <code>/sw reload</code> or <code>/graveguard reload</code>.</p>
 </div></header>
 
 <div class="wrap">
@@ -82,18 +82,18 @@
 <h2>GraveGuard — <code>config.yml</code></h2>
 <table>
   <tr><th>Key</th><th>Default</th><th>What it does</th></tr>
-  <tr><td>protection-seconds</td><td class="d">120</td><td>Time only the owner (and ops) can open the grave.</td></tr>
-  <tr><td>despawn-seconds</td><td class="d">600</td><td>Until the grave despawns entirely (0 = never).</td></tr>
-  <tr><td>max-search-height</td><td class="d">8</td><td>Blocks searched upward from the death point to place the grave.</td></tr>
-  <tr><td>hologram</td><td class="d">true</td><td>Floating owner + countdown text above the grave.</td></tr>
-  <tr><td>store-xp</td><td class="d">true</td><td>Player XP is stored in the grave too.</td></tr>
-  <tr><td>return-compass</td><td class="d">true</td><td>Give the owner a "Last Grave" compass on respawn.</td></tr>
+  <tr><td>grave.protection-seconds</td><td class="d">120</td><td>Time only the owner (and ops/bypass) can open the grave.</td></tr>
+  <tr><td>grave.despawn-seconds</td><td class="d">600</td><td>Until the grave despawns entirely (0 = never).</td></tr>
+  <tr><td>grave.max-search-height</td><td class="d">8</td><td>Blocks searched upward from the death point to place the grave.</td></tr>
+  <tr><td>grave.hologram</td><td class="d">true</td><td>Floating owner + countdown text above the grave.</td></tr>
+  <tr><td>grave.xp-mode</td><td class="d">FULL</td><td><code>FULL</code> preserves exact level progress, <code>VANILLA_DROP</code> stores vanilla-drop XP, <code>NONE</code> disables XP storage.</td></tr>
+  <tr><td>grave.return-compass</td><td class="d">true</td><td>Give the owner a "Last Grave" compass on respawn.</td></tr>
   <tr><td>messages.*</td><td class="d">—</td><td>Every chat line is editable, with <code>%time%</code>/<code>%owner%</code>/<code>%loc%</code> placeholders.</td></tr>
   <tr><td>prefix</td><td class="d">[&amp;6GraveGuard&amp;8]</td><td>Chat message prefix (color codes supported).</td></tr>
 </table>
 
 <div class="note">
-  <b>Compatibility:</b> both plugins target <b>Paper 1.21.x</b> (tested 1.21.4 &amp; 1.21.11), Java 21, zero dependencies. They run fine side by side — SecondWind handles the down; if the player still dies, GraveGuard guards the loot.
+  <b>Compatibility:</b> both plugins target <b>Paper 1.21.x</b> (validated on 1.21.11), Java 21, zero dependencies. They run fine side by side — SecondWind handles the down; if the player still dies, GraveGuard guards the loot.
 </div>
 
 <div class="note">
