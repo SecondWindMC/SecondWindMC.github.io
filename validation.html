@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validation Report — SecondWindMC automated Paper 1.21.11 tests</title>
+<meta name="description" content="Public validation summary for SecondWind and GraveGuard: Paper 1.21.11, Java 21, automated client-bot tests, restart persistence, item recovery, XP recovery, and revive checks.">
+<link rel="canonical" href="https://secondwindmc.github.io/validation.html">
+<style>body{margin:0;background:#050505;color:#ededed;font-family:Inter,system-ui,sans-serif;line-height:1.65}a{color:#ff4d5e}main{max-width:840px;margin:auto;padding:48px 22px}h1{font-size:2.35rem;line-height:1.05;letter-spacing:-.04em}h2{margin-top:42px}p,li{color:#aaa}code{background:#111;border:1px solid #262626;border-radius:7px;padding:2px 6px}.card{border:1px solid #262626;background:#0a0a0a;border-radius:14px;padding:20px;margin:16px 0}.ok{color:#7ee787;font-weight:700}.cta{display:inline-block;background:#ff4d5e;color:white;text-decoration:none;font-weight:700;border-radius:10px;padding:12px 18px;margin:18px 8px 18px 0}.ghost{background:transparent;border:1px solid #333}table{width:100%;border-collapse:collapse;margin:20px 0}td,th{border-bottom:1px solid #262626;padding:11px 12px;text-align:left}th{color:#888;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}td{color:#aaa}</style>
+</head>
+<body><main>
+<p><a href="/">← SecondWindMC</a></p>
+<p style="color:#ff4d5e;font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem">Validation report</p>
+<h1>Tested before launch, not just compiled</h1>
+<p>Validation date: <b style="color:#fff">November 25, 2026</b><br>Environment: <b style="color:#fff">Paper 1.21.11 build 132 · Java 21.0.13.1 · offline-mode local server · Mineflayer client bots</b></p>
+<a class="cta" href="/#buy">Get the bundle — $8.99</a><a class="cta ghost" href="/docs.html">Configuration docs</a>
+
+<h2>GraveGuard 1.1.0</h2>
+<div class="card"><span class="ok">PASS</span> — controlled death produced a grave chest at the death point.</div>
+<div class="card"><span class="ok">PASS</span> — diamonds and sword were stored virtually in the protected grave record instead of spilling or sitting loose in a chest.</div>
+<div class="card"><span class="ok">PASS</span> — exact XP storage recorded 100 XP after a rounding defect was found and fixed during validation.</div>
+<div class="card"><span class="ok">PASS</span> — the return compass was delivered after respawn.</div>
+<div class="card"><span class="ok">PASS</span> — the grave survived a full server restart and was reloaded from persistent state.</div>
+<div class="card"><span class="ok">PASS</span> — a separate intruder client could not obtain protected items, and the owner could still recover the full inventory afterward.</div>
+
+<h2>SecondWind 1.0.0</h2>
+<div class="card"><span class="ok">PASS</span> — lethal player damage put the victim into the downed state at 4 health instead of causing immediate death.</div>
+<div class="card"><span class="ok">PASS</span> — the victim remained in place instead of respawning.</div>
+<div class="card"><span class="ok">PASS</span> — a nearby teammate holding sneak completed the revive channel.</div>
+<div class="card"><span class="ok">PASS</span> — revived health matched the configured value of 6.</div>
+
+<h2>Bundle artifact</h2>
+<table>
+<tr><th>Artifact</th><td><code>smp-mechanics-bundle-v1.zip</code></td></tr>
+<tr><th>SHA-256</th><td><code>4e245b725279910166685dbec976196087c167fc301388719b11225e82a3f29a</code></td></tr>
+<tr><th>Presets</th><td><code>casual-smp</code>, <code>hardcore-lifesteal</code>, and <code>raid-factions</code>; all six YAML files parse successfully.</td></tr>
+</table>
+<p>These automated checks validate functionality in the stated environment. They are not a claim of compatibility with every plugin stack or every Paper fork.</p>
+</main></body></html>
